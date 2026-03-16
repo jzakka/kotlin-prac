@@ -1,22 +1,12 @@
-import ch09.buildHtml
-import ch09.maskEmail
-import ch09.secondMax
-import ch09.toSlug
+import ch10.applyDiscount
+import ch10.averageOrderPriceByCategory
+import ch10.orders
+import ch10.totalOrderPriceByCustomer
 
 fun main() {
-// String 확장
-    println("Hello World Kotlin".toSlug())  // "hello-world-kotlin"
-    println("user@gmail.com".maskEmail())   // "u***@gmail.com"
+    totalOrderPriceByCustomer()
+    averageOrderPriceByCategory()
 
-    // List 확장
-    println(listOf(3, 1, 4, 1, 5, 9).secondMax())  // 5
-
-    // HTML 빌더
-    val html = buildHtml {
-        head("My Page")
-        body("Hello, World!")
-    }
-    println(html)
-    // <html><head><title>My Page</title></head><body>Hello, World!</body></html>
-
+    val discounted = orders.applyDiscount(0.1) { it.amount >= 50000 }
+    println(discounted)
 }
