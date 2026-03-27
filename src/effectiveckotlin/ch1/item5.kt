@@ -26,7 +26,7 @@ fun getUserInfo(email: String) {
 }
 
 class Dress
-data class Person(val outfit: Any, val email: String?)
+data class Person(val outfit: Any, val email: String?, val age: Int?)
 
 fun changeDress(person: Person) {
     require(person.outfit is Dress)
