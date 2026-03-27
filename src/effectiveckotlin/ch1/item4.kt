@@ -1,4 +1,4 @@
-package effectiveckotlin.ch4
+package effectiveckotlin.ch1
 
 import kotlinx.coroutines.runBlocking
 import kotlin.concurrent.thread
@@ -13,7 +13,7 @@ fun buzz() = runBlocking {
     print(a + c)
 }
 
-data class User(val name: String?)
+data class User4(val name: String?)
 fun main() {
     println(primes.take(10).toList())
 }

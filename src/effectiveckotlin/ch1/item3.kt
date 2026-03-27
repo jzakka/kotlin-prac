@@ -1,4 +1,4 @@
-package effectiveckotlin.ch3
+package effectiveckotlin.ch1
 
 val repo = UserRepo()
 val user1 = repo.user

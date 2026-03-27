@@ -1,4 +1,4 @@
-package effectiveckotlin.ch2
+package effectiveckotlin.ch1
 
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.atomic.AtomicInteger
@@ -19,15 +19,15 @@ class Counter {
     fun get(): Int = num
 }
 
-data class User(val name: String)
+data class User2(val name: String)
 
 class UserRepository {
-    private var users: List<User> = listOf()
+    private var users: List<User2> = listOf()
     private var LOCK: Any = Any()
 
-    fun loadAll(): List<User> = users
+    fun loadAll(): List<User2> = users
 
-    fun add(user: User) = synchronized(LOCK) {
+    fun add(user: User2) = synchronized(LOCK) {
         users += user
     }
 }
@@ -36,7 +36,7 @@ class UserRepositoryTest {
     fun `should add elements`() {
         val repo = UserRepository()
         val oldElements = repo.loadAll()
-        repo.add(User("B"))
+        repo.add(User2("B"))
         val newElements = repo.loadAll()
         assert(oldElements != newElements)
     }
@@ -46,7 +46,7 @@ fun main() {
     val repo = UserRepository()
     thread {
         for (i in 1..10000) {
-            repo.add(User("User $i"))
+            repo.add(User2("User $i"))
         }
     }
     thread {

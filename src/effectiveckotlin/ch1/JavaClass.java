@@ -1,4 +1,4 @@
-package effectiveckotlin.ch3;
+package effectiveckotlin.ch1;
 
 public class JavaClass {
     public String getValue() {

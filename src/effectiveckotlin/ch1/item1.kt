@@ -65,7 +65,7 @@ data class FullName(var firstName: String, var lastName: String): Comparable<Ful
     }
 }
 
-data class User (val name: String, val surname: String)
+data class User1 (val name: String, val surname: String)
 
 var names  by observable(listOf<String>()) { _, old, new ->
     println("Names changed from $old to $new")
